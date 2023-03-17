@@ -34,6 +34,7 @@ public class ExceptionAspect {
 
     @AfterThrowing(value = "exceptionLogPointCut()", throwing = "e")
     public void logException(Throwable e)  {
+        System.out.println("logException");
         LOG.warn(e);
     }
 
@@ -43,6 +44,7 @@ public class ExceptionAspect {
 
     @AfterThrowing(value = "exitPointCut()", throwing = "e")
     public void exitException(Throwable e)  {
+        System.out.println("exitException");
         LOG.warn("A problem that does not allow errors has occurred.");
         LOG.warn(e);
         System.exit(-1);

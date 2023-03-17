@@ -36,6 +36,7 @@ import org.apache.doris.qe.QeService;
 import org.apache.doris.service.ExecuteEnv;
 import org.apache.doris.service.FeServer;
 import org.apache.doris.service.FrontendOptions;
+import org.apache.doris.test.annotation.Test;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Strings;
@@ -67,6 +68,7 @@ public class PaloFe {
     public static final String PID_DIR = System.getenv("PID_DIR");
 
     public static void main(String[] args) {
+        new Test().testAspect();
         StartupOptions options = new StartupOptions();
         options.enableHttpServer = true;
         options.enableQeService = true;
